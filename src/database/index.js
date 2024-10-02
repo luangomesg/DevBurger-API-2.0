@@ -17,7 +17,9 @@ class Database {
   }
 
   init() {
-    this.connection = new Sequelize(process.env.POSTGRES_URL, {});
+    this.connection = new Sequelize(
+      'postgres://default:MYD6NjtKoXm0@ep-dark-band-a4fqqgt6-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require',
+    );
     models
       .map((model) => model.init(this.connection))
       .map(
