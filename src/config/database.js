@@ -2,6 +2,7 @@ module.exports = {
   development: {
     url: 'postgresql://devburger_api_d7u3_user:SdePiZ0LuUa3Q69V0Lyx5L8BFVDnqXgK@dpg-cru95ag8fa8c73cafbk0-a.oregon-postgres.render.com/devburger_api_d7u3', // Use a URL completa
     dialect: 'postgres',
+    port: 5432,
     dialectOptions: {
       ssl: {
         require: true,
@@ -12,6 +13,7 @@ module.exports = {
   test: {
     url: 'postgresql://devburger_api_d7u3_user:SdePiZ0LuUa3Q69V0Lyx5L8BFVDnqXgK@dpg-cru95ag8fa8c73cafbk0-a.oregon-postgres.render.com/devburger_api_d7u3',
     dialect: 'postgres',
+    port: 5432,
     dialectOptions: {
       ssl: {
         require: true,
@@ -22,6 +24,7 @@ module.exports = {
   production: {
     url: 'postgresql://devburger_api_d7u3_user:SdePiZ0LuUa3Q69V0Lyx5L8BFVDnqXgK@dpg-cru95ag8fa8c73cafbk0-a.oregon-postgres.render.com/devburger_api_d7u3',
     dialect: 'postgres',
+    port: 5432,
     dialectOptions: {
       ssl: {
         require: true,
