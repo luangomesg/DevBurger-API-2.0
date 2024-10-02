@@ -1,17 +1,25 @@
 module.exports = {
   development: {
-    url: 'postgresql://devburger_api_d7u3_user:SdePiZ0LuUa3Q69V0Lyx5L8BFVDnqXgK@dpg-cru95ag8fa8c73cafbk0-a.oregon-postgres.render.com/devburger_api_d7u3', // Use a URL completa
+    username: process.env.POSTGRES_USER,
+    password: process.env.POSTGRES_PASSWORD,
+    database: process.env.POSTGRES_DATABASE,
+    host: process.env.POSTGRES_HOST,
+    url: 'postgres://default:MYD6NjtKoXm0@ep-dark-band-a4fqqgt6-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require',
     dialect: 'postgres',
     port: 5432,
     dialectOptions: {
       ssl: {
         require: true,
-        rejectUnauthorized: false,
+        rejectUnauthorized: false, // se necessário, dependendo da configuração de SSL
       },
     },
   },
   test: {
-    url: 'postgresql://devburger_api_d7u3_user:SdePiZ0LuUa3Q69V0Lyx5L8BFVDnqXgK@dpg-cru95ag8fa8c73cafbk0-a.oregon-postgres.render.com/devburger_api_d7u3',
+    username: process.env.POSTGRES_USER,
+    password: process.env.POSTGRES_PASSWORD,
+    database: process.env.POSTGRES_DATABASE,
+    host: process.env.POSTGRES_HOST,
+    url: 'postgres://default:MYD6NjtKoXm0@ep-dark-band-a4fqqgt6-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require',
     dialect: 'postgres',
     port: 5432,
     dialectOptions: {
@@ -22,8 +30,12 @@ module.exports = {
     },
   },
   production: {
-    url: 'postgresql://devburger_api_d7u3_user:SdePiZ0LuUa3Q69V0Lyx5L8BFVDnqXgK@dpg-cru95ag8fa8c73cafbk0-a.oregon-postgres.render.com/devburger_api_d7u3',
+    username: process.env.POSTGRES_USER,
+    password: process.env.POSTGRES_PASSWORD,
+    database: process.env.POSTGRES_DATABASE,
+    host: process.env.POSTGRES_HOST,
     dialect: 'postgres',
+    url: 'postgres://default:MYD6NjtKoXm0@ep-dark-band-a4fqqgt6-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require',
     port: 5432,
     dialectOptions: {
       ssl: {
