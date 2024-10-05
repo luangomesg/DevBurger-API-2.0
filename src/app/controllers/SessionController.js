@@ -26,12 +26,16 @@ class SessionController {
       where: { email },
     });
 
-    if (!user) {
-      userEmailOrPasswordIncorrect();
-    }
+    try {
+      if (!user) {
+        userEmailOrPasswordIncorrect();
+      }
 
-    if (!(await user.checkPassword(password))) {
-      userEmailOrPasswordIncorrect();
+      if (!(await user.checkPassword(password))) {
+        userEmailOrPasswordIncorrect();
+      }
+    } catch (err) {
+      console.log('Ocorreu um erro', err);
     }
 
     return response.json({
