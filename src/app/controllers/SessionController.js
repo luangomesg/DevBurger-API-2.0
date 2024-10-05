@@ -17,7 +17,7 @@ class SessionController {
     };
 
     if (!(await schema.isValid(request.body))) {
-      userEmailOrPasswordIncorrect();
+      return userEmailOrPasswordIncorrect();
     }
 
     const { email, password } = request.body;
@@ -26,16 +26,12 @@ class SessionController {
       where: { email },
     });
 
-    try {
-      if (!user) {
-        userEmailOrPasswordIncorrect();
-      }
+    if (!user) {
+      return userEmailOrPasswordIncorrect();
+    }
 
-      if (!(await user.checkPassword(password))) {
-        userEmailOrPasswordIncorrect();
-      }
-    } catch (err) {
-      console.log('Ocorreu um erro', err);
+    if (!(await user.checkPassword(password))) {
+      return userEmailOrPasswordIncorrect();
     }
 
     return response.json({
