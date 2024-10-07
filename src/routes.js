@@ -18,7 +18,7 @@ routes.post('/users', UserController.store); // Cadastro
 
 routes.post('/sessions', SessionController.store); // Login
 
-routes.use(authMiddleware); // será chamado por todas as rotas ABAIXO
+// será chamado por todas as rotas ABAIXO
 
 routes.post('/products', upload.single('file'), ProductController.store);
 routes.get('/products', ProductController.index);
