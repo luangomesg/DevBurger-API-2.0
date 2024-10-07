@@ -17,14 +17,3 @@ PG_PORT=11795
 PG_USERNAME="postgres"
 PG_PASSWORD="c*FdEeGf-eEG*b5*-2Gdcdcf4F-2e1b4"
 PG_DATABASE="railway"
-```
-## Usuários para teste
-```ts
-#CLIENTE COMUM
-EMAIL="customer@devburger.com.br"
-PASS="123456"
-
-#ADMIN
-EMAIL="admin@devburger.com.br"
-PASS="123456"
-```
