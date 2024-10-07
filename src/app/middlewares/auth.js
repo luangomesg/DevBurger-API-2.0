@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import authConfig from '../../config/auth';
 
 export default (request, response, next) => {
-  const authToken = request.headers.authorization;
+  const authToken = request.headers.Authorization;
 
   if (!authToken) {
     return response.status(401).json({ error: 'Token not provided' });
