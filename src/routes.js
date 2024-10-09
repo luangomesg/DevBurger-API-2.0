@@ -23,12 +23,11 @@ routes.put('/products/:id', upload.single('file'), ProductController.update);
 
 routes.post('/categories', upload.single('file'), CategoryController.store);
 routes.put('/categories/:id', upload.single('file'), CategoryController.update);
-
-routes.use(authMiddleware); // será chamado por todas as rotas ABAIXO
-
 routes.get('/products', ProductController.index);
 
 routes.get('/categories', CategoryController.index);
+
+routes.use(authMiddleware); // será chamado por todas as rotas ABAIXO
 
 routes.post('/orders', OrderController.store);
 routes.put('/orders/:id', OrderController.update);
