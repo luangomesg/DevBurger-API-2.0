@@ -18,16 +18,15 @@ routes.post('/users', UserController.store); // Cadastro
 
 routes.post('/sessions', SessionController.store); // Login
 
+routes.use(authMiddleware); // será chamado por todas as rotas ABAIXO
+
+routes.get('/products', ProductController.index);
 routes.post('/products', upload.single('file'), ProductController.store);
 routes.put('/products/:id', upload.single('file'), ProductController.update);
 
+routes.get('/categories', CategoryController.index);
 routes.post('/categories', upload.single('file'), CategoryController.store);
 routes.put('/categories/:id', upload.single('file'), CategoryController.update);
-routes.get('/products', ProductController.index);
-
-routes.get('/categories', CategoryController.index);
-
-routes.use(authMiddleware); // será chamado por todas as rotas ABAIXO
 
 routes.post('/orders', OrderController.store);
 routes.put('/orders/:id', OrderController.update);
